@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TWProjects - Listagem de Clientes</title>
+
+  <!-- Pico CSS Styles -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1.5.10/css/pico.min.css">
+</head>
+<body>
+  <nav class="container-fluid">
+    <ul>
+      <li><strong>TWProjects</strong></li>
+    </ul>
+    <ul>
+      <li><a href="#">Clientes</a></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+    <h1>Listagem de Clientes</h1>
+
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nome</th>
+          <th scope="col">E-mail</th>
+          <th scope="col">Telefone</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr th:each="client : ${clients}">
+          <th scope="row" th:text="${client.id}">1</th>
+          <td th:text="${client.name}">Cleyson Lima</td>
+          <td th:text="${client.email}">cleyson@mail.com</td>
+          <td th:text="${client.phone}">(11) 99999-9999</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <a href="#" role="button">Novo cliente</a>
+  </main>
+</body>
+</html>
