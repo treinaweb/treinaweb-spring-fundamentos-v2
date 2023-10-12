@@ -1,6 +1,7 @@
 package br.com.treinaweb.twprojects.web.clients.dtos;
 
 import br.com.treinaweb.twprojects.core.models.Client;
+import br.com.treinaweb.twprojects.core.utils.StringUtils;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -21,7 +22,7 @@ public class ClientViewModel {
     private String email;
 
     public String getPhone() {
-        return phone.replaceAll("(\\d{2})(\\d{5})(\\d{4})", "($1) $2-$3");
+        return StringUtils.formatPhone(phone);
     }
 
     public static ClientViewModel of(Client client) {
