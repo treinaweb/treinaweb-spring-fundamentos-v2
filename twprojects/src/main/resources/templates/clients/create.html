@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TWProjects - Cadastro de Clientes</title>
+
+  <!-- Pico CSS Styles -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1.5.10/css/pico.min.css">
+</head>
+<body>
+  <nav class="container-fluid">
+    <ul>
+      <li><strong>TWProjects</strong></li>
+    </ul>
+    <ul>
+      <li><a href="#">Clientes</a></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+    <h1>Cadastro de Clientes</h1>
+
+    <form method="post" th:object="${clientForm}">
+      <label>
+        Nome*
+        <input type="text" th:field="*{name}" required>
+      </label>
+      
+      <label>
+        E-mail*
+        <input type="email" th:field="*{email}" required>
+      </label>
+      
+      <label>
+        Telefone*
+        <input 
+          type="text"
+          th:field="*{phone}"
+          required
+          placeholder="(00) 00000-0000"
+          pattern="^\(\d{2}\) \d{5}-\d{4}$"
+        >
+      </label>
+
+      <button type="submit">Salvar</button>
+    </form>
+  </main>
+</body>
+</html>
